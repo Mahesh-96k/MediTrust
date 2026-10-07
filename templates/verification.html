@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediTrust - Verification Report</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        .navbar {
+            background: #0b1f3a;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2 {
+            color: #0b1f3a;
+        }
+
+        .row {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .status {
+            color: green;
+            font-weight: bold;
+        }
+
+        .risk-box {
+            padding: 20px;
+            background: #f4f7fb;
+            text-align: center;
+        }
+
+        .back {
+            display: inline-block;
+            background: #0b1f3a;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        MediTrust
+    </div>
+
+    <div class="container">
+
+        <h1>Verification Report</h1>
+
+        <!-- Report Information -->
+        <div class="card">
+
+            <h2>Report Information</h2>
+
+            <div class="row">
+                <strong>Report ID:</strong>
+                {{ report.report_id }}
+            </div>
+
+            <div class="row">
+                <strong>File Name:</strong>
+                {{ report.original_filename }}
+            </div>
+
+            <div class="row">
+                <strong>Upload Date:</strong>
+                {{ report.upload_time }}
+            </div>
+
+            <div class="row">
+                <strong>Status:</strong>
+                <span class="status">
+                    {{ report.status }}
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Module 1 -->
+        <div class="card">
+
+            <h2>Extracted Information</h2>
+
+<p>
+    <strong>Patient Name:</strong>
+    {{ report.patient_name or "Not available yet" }}
+</p>
+
+<p>
+    <strong>Doctor:</strong>
+    {{ report.doctor_name or "Not available yet" }}
+</p>
+
+<p>
+    <strong>Hospital:</strong>
+    {{ report.hospital_name or "Not available yet" }}
+</p>
+
+<p>
+    <strong>Diagnosis:</strong>
+    {{ report.diagnosis or "Not available yet" }}
+</p>
+
+<p>
+    <strong>Report Date:</strong>
+    {{ report.report_date or "Not available yet" }}
+</p>
+
+<p>
+    <strong>Laboratory Results:</strong>
+    {{ report.laboratory_results or "Not available yet" }}
+</p>
+
+        </div>
+
+        <!-- Module 2 -->
+        <div class="card">
+
+            <h2>Validation Findings</h2>
+
+<p>
+    {{ report.validation_findings or "No validation findings available yet." }}
+</p>
+
+        </div>
+
+        <!-- Module 3 -->
+        <div class="card">
+
+            <h2>Risk Analysis</h2>
+
+<div class="risk-box">
+
+    <h3>Risk Score</h3>
+
+    <h2>
+        {{ report.risk_score if report.risk_score is not none else "Not Available Yet" }}
+    </h2>
+
+    <p>
+        <strong>Risk Level:</strong>
+        {{ report.risk_level or "Not Available Yet" }}
+    </p>
+
+    <p>
+        <strong>Reasons:</strong>
+        {{ report.risk_reasons or "No risk reasons available yet." }}
+    </p>
+
+</div>
+
+        <!-- Final result -->
+        <div class="card">
+
+            <h2>Verification Summary</h2>
+
+            <p>
+                This report is currently awaiting complete processing.
+                Final verification information will appear after
+                OCR, validation and risk analysis are completed.
+            </p>
+
+        </div>
+
+        <a href="/dashboard" class="back">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+
+</html>

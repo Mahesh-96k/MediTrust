@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediTrust - Upload Report</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+        }
+
+        .navbar {
+            background-color: #17365d;
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back {
+            color: white;
+            text-decoration: none;
+            background-color: #555;
+            padding: 9px 18px;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 60px auto;
+        }
+
+        .upload-card {
+            background-color: white;
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .upload-card h1 {
+            color: #17365d;
+            margin-bottom: 10px;
+        }
+
+        .upload-card p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .file-box {
+            border: 2px dashed #17365d;
+            padding: 40px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .file-box input {
+            margin-top: 15px;
+        }
+
+        .analyze-button {
+            background-color: #17365d;
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .analyze-button:hover {
+            background-color: #0f2744;
+        }
+
+        .note {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            MediTrust
+        </div>
+
+        <a href="/dashboard" class="back">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="upload-card">
+
+            <h1>Upload Medical Report</h1>
+
+            <p>
+                Upload a medical report for preliminary verification.
+            </p>
+
+
+            <form method="POST" enctype="multipart/form-data">
+
+                <div class="file-box">
+
+                    <strong>Select Medical Report</strong>
+
+                    <br>
+
+                    <input
+                        type="file"
+                        name="report"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required
+                    >
+
+                    <p>
+                        Supported formats: PDF, JPG, JPEG and PNG
+                    </p>
+
+                </div>
+
+
+                <button type="submit" class="analyze-button">
+                    Analyze Report
+                </button>
+
+            </form>
+
+
+            <div class="note">
+                The system provides preliminary screening results
+                for further verification.
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
