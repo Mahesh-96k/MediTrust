@@ -1,0 +1,21 @@
+{
+    "report_id": "RPT1005",
+
+    "medical_data": {
+        "age": 25,
+        "hemoglobin": 13.5,
+        "glucose": 98,
+        "systolic_bp": 120,
+        "diastolic_bp": 80,
+        "heart_rate": 75
+    },
+
+    "validation_indicators": {
+        "patient_id_inconsistency": false,
+        "duplicate_report": false,
+        "invalid_date": false,
+        "missing_field": false,
+        "lab_inconsistency": false,
+        "information_inconsistency": false
+    }
+}
