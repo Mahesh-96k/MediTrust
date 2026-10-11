@@ -1,0 +1,33 @@
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Pytest cache
+.pytest_cache/
+
+# Uploaded documents
+uploads/*
+
+# Keep the uploads directory
+!uploads/.gitkeep
+
+# Generated processed files
+processed/*
+
+# Keep the processed directory
+!processed/.gitkeep
+
+# Environment files
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
