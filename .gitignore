@@ -1,26 +1,21 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
 
+# Python environments and cache
+venv/
 .venv/
-venv/
-.env
 __pycache__/
-*.pyc
-.vscode/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Uploaded files and local data
 uploads/
-=======
-# Python
-__pycache__/
-*.pyc
 
-# Virtual environment
-venv/
-
-# Environment variables
-.env
-
-# VS Code
+# Editors and operating systems
 .vscode/
-
-# OS files
 .DS_Store
 Thumbs.db
-
