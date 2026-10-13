@@ -1,4 +1,4 @@
-```yaml
+
 name: MediTrust Tests
 
 on:
@@ -63,4 +63,3 @@ jobs:
 
       - name: Run Fraud Engine tests
         run: python -m pytest test_fraud_engine.py test_api_pytest.py -q
-```
