@@ -1,4 +1,4 @@
-
+```yaml
 name: MediTrust Tests
 
 on:
@@ -38,3 +38,29 @@ jobs:
 
       - name: Run OCR tests
         run: python -m pytest tests -q
+
+  fraud-engine-tests:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: backend/fraud_engine
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Fraud Engine dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run Fraud Engine tests
+        run: python -m pytest test_fraud_engine.py test_api_pytest.py -q
+```
